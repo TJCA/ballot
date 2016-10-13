@@ -13,7 +13,7 @@
     <table id="9" parent="1" name="django_content_type" />
     <table id="10" parent="1" name="django_migrations" />
     <table id="11" parent="1" name="django_session" />
-    <table id="12" parent="1" name="draw_user" />
+    <table id="12" parent="1" name="draw_athlete" />
     <table id="13" parent="1" name="sqlite_sequence" />
     <column id="14" parent="2" name="id">
       <mandatory>1</mandatory>

@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Athlete
+
+
+class AthleteAdmin(admin.ModelAdmin):
+    list_display = ['number', 'name']
+
+admin.site.register(Athlete, AthleteAdmin)

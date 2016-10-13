@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User
+from .models import Athlete
 from django.http import HttpResponse
 from random import shuffle
 
@@ -12,13 +12,13 @@ def index(request):
 
 def submit(request):
     name = request.POST.get('name')
-    user = User.objects.filter(name=name)
+    user = Athlete.objects.filter(name=name)
     if name is '':
         return render(request, 'draw/info.html', {'text': '姓名不能为空！'})
     if user.exists():
         return render(request, 'draw/info.html', {'text': '该名字已经存在！'})
     else:
-        users = User.objects.filter(name='')
+        users = Athlete.objects.filter(name='')
         user = users[0]
         user.name = name
         user.save()
