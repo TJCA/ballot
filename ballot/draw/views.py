@@ -25,12 +25,12 @@ def submit(request):
         return render(request, 'draw/info.html', {'text': '您的编号是：' + str(user.number)})
 
 
-# def _init(request):
-#     array = []
-#     for i in range(1, 129):
-#         array.append(i)
-#     shuffle(array)
-#     for i in array:
-#         user = User(number=i)
-#         user.save()
+def _init(request):
+    array = []
+    for i in range(1, 129):
+        array.append(i)
+    shuffle(array)
+    for i in array:
+        user = Athlete(number=i)
+        user.save()
 
