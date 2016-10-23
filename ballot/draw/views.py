@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Athlete
 from django.http import HttpResponse
-from random import shuffle
+from random import shuffle, randrange
 
 
 # Create your views here.
@@ -34,10 +34,10 @@ def submit(request):
             group_name = 'D'
         else:
             return render(request, 'draw/info.html', {'text': '组别不能为空！'})
-        users = Athlete.objects.filter(name='', id__lte=num, id__gte=num-31)
+        users = Athlete.objects.filter(name='', number__lte=num, number__gte=num-31)
         if len(users) is 0:
             return render(request, 'draw/info.html', {'text': group_name + '组已满，请选择其他组别！'})
-        user = users[0]
+        user = users[randrange(0, len(users))]
         user.name = name
         user.group = group_id
         user.save()
