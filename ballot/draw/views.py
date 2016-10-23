@@ -34,15 +34,12 @@ def submit(request):
             group_name = 'D'
         else:
             return render(request, 'draw/info.html', {'text': '组别不能为空！'})
-        print('num:  ' + str(num))
         users = Athlete.objects.filter(name='', id__lte=num, id__gte=num-31)
-        print(users)
         if len(users) is 0:
             return render(request, 'draw/info.html', {'text': group_name + '组已满，请选择其他组别！'})
         user = users[0]
         user.name = name
         user.group = group_id
-        print(user)
         user.save()
         return render(request, 'draw/info.html', {'text': '您的编号是：' + str(user.number) + '\n' + '您的组别是：' + group_name})
 
