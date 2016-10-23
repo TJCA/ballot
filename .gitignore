@@ -9,7 +9,7 @@ ballot/static
 *.so
 .idea
 .Ds_Store
-
+db.sqlite3
 # Distribution / packaging
 .Python
 env/
@@ -91,3 +91,4 @@ ENV/
 # Rope project settings
 .ropeproject
 
+ballot/draw/migrations/0004_athlete_group.py

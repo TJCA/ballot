@@ -10,11 +10,23 @@
     <style>
         body {
             text-align: center;
-
+            font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+            color: #2c3e50;
         }
         #form {
-            margin-top: 200px;
+            margin-top: 100px;
         }
+        #select {
+            border-radius: 10px;
+            padding: 10px 60px;
+            font-size: 24px;
+            border: 1px solid #d2d2d2;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0 0 20px 20px;
+        }   
         #input {
             border-radius: 10px;
             padding: 20px 40px;
@@ -36,18 +48,39 @@
         #submit {
             margin-top: 50px;
         }
+        #support {
+            margin-top: 100px;
+        }
+        #header {
+            padding-top: 50px;
+        }
     </style>
 </head>
 <body>
+    <div id="header">
+        <h1>抽签系统</h1>
+    </div>
     <form id="form" action="/submit" method="post">
         {% csrf_token %}
+        <div>
+            <label for="select">选择您的组别:</label>
+            <select name="group" id="select">
+                <option value="1">A组</option>
+                <option value="2">B组</option>
+                <option value="3">C组</option>
+                <option value="4">D组</option>
+            </select>
+        </div>
         <div>
             <input id="input" type="text" name="name" placeholder="请输入您的姓名"/>
         </div>
         <div id="submit">
             <button type="submit">抽签</button>
         </div>
-
     </form>
+    <div id="support">
+        <hr />
+        <p>同济大学计算机协会 | 技术支持</p>
+    </div>
 </body>
 </html>
