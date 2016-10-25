@@ -1,0 +1,34 @@
+{% extends '_layout.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'draw/css/main.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div id="header">
+        <h1>抽签系统</h1>
+    </div>
+    <form id="form" action="/submit" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="select">选择您的组别:</label>
+            <select name="group" id="select">
+                <option value="1">A组</option>
+                <option value="2">B组</option>
+                <option value="3">C组</option>
+                <option value="4">D组</option>
+            </select>
+        </div>
+        <div>
+            <input id="input" type="text" name="name" placeholder="请输入您的姓名"/>
+        </div>
+        <div id="submit">
+            <button type="submit">抽签</button>
+        </div>
+    </form>
+    <div id="support">
+        <hr/>
+        <p>同济大学计算机协会 | 技术支持</p>
+    </div>
+{% endblock %}

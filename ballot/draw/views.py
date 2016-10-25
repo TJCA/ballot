@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from .models import Athlete
-from django.http import HttpResponse
 from random import shuffle, randrange
-
-
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -52,3 +50,4 @@ def _init(request):
     for i in array:
         user = Athlete(number=i)
         user.save()
+    return HttpResponse('初始化完毕。')
