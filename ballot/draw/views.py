@@ -42,7 +42,7 @@ def submit(request):
         return render(request, 'draw/info.html', {'text': '您的编号是：' + str(user.number) + '\n' + '您的组别是：' + group_name})
 
 
-def _init(request):
+def init(request):
     array = []
     for i in range(1, 129):
         array.append(i)
