@@ -4,11 +4,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-ballot/static/admin
 # C extensions
 *.so
 .idea
-.Ds_Store
+.DS_Store
 db.sqlite3
 # Distribution / packaging
 .Python
@@ -90,4 +89,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
-ballot/static/
+static/
