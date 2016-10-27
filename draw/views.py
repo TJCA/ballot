@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from .models import Athlete
 from random import shuffle, randrange
@@ -19,16 +21,16 @@ def submit(request):
         return render(request, 'draw/info.html', {'text': '该名字已经存在！'})
     else:
         if group_id is 1:
-            num = 31
+            num = 32
             group_name = 'A'
         elif group_id is 2:
-            num = 63
+            num = 64
             group_name = 'B'
         elif group_id is 3:
-            num = 95
+            num = 96
             group_name = 'C'
         elif group_id is 4:
-            num = 127
+            num = 128
             group_name = 'D'
         else:
             return render(request, 'draw/info.html', {'text': '组别不能为空！'})
